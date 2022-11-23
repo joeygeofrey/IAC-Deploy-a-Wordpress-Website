@@ -1,0 +1,12 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: >-
+  This template contains necessary instructions to launch a network and server components for a Wordpress deployment.
+Parameters:
+  EnvironmentName:
+    Description: An environment name that will be prefixed to the resources used by the appl
+    Type: String
+  WordpressInstanceType:
+    Description: Select the EC2 Instance Type to be used
+    Type: String
+    Default: t2.micro
+Resources:
