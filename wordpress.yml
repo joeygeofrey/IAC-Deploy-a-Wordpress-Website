@@ -61,8 +61,19 @@ Resources:
       RouteTableId: !Ref PublicRouteTable
       DestinationCidrBlock: 0.0.0.0/0
       GatewayId: !Ref InternetGateway
-  PublicSubnet1RouteTableAssociation:
+  PublicSubnetRouteTableAssociation:
     Type: AWS::EC2::SubnetRouteTableAssociation
     Properties:
       RouteTableId: !Ref PublicRouteTable
       SubnetId: !Ref PublicSubnet
+Outputs:
+  VPC: 
+      Description: A reference to the created VPC
+      Value: !Ref VPC
+      Export:
+        Name: !Sub ${EnvironmentName}-VPCID
+  PublicSubnet:
+      Description: A reference to the public subnet
+      Value: !Ref PublicSubnet
+      Export:
+        Name: !Sub ${EnvironmentName}-PUB-SN
