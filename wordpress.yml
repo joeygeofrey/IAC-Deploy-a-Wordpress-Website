@@ -5,8 +5,17 @@ Parameters:
   EnvironmentName:
     Description: An environment name that will be prefixed to the resources used by the appl
     Type: String
+    VpcCIDR:
+  Description: Enter the IP range (CIDR notation) for the VPC
+    Type: String
+    Default: 10.0.0.0/16
+  PublicSubnetCIDR:
+    Description: CIDR block for the Public Subnet
+    Type: String
+    Default: 10.0.0.0/24
   WordpressInstanceType:
     Description: Select the EC2 Instance Type to be used
     Type: String
     Default: t2.micro
 Resources:
+
